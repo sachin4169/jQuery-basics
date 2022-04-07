@@ -7,21 +7,22 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        .table{
-            width: 50%;
-            margin: auto;
-        }
-        table{
-            width: 100%;
-        }
-        tr{
-            border: 1px solid gray;
-        }
-        th,td{
-            text-align: left;
-            padding: 10px;
-            width: 20px;
-        }
+      .table {
+        width: 50%;
+        margin: auto;
+      }
+      table {
+        width: 100%;
+      }
+      tr {
+        border: 1px solid gray;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 10px;
+        width: 20px;
+      }
     </style>
   </head>
   <body>
@@ -33,40 +34,50 @@
     <input type="password" name="password" id="password" />
     <h4>Confirm Password</h4>
     <input type="password" name="conpassword" id="conpassword" />
-    <p id="msg" style="color: red;"></p>
+    <p id="msg" style="color: red"></p>
     <button id="btn">Submit</button>
 
-
     <div class="table">
-        <button id="evenbtn">Color Even Row</button>
-        <button id="oddbtn">Color Odd Row</button>
-        <table>
-            <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Country</th>
-            </tr>
-            <tr>
-                <td>Amazon</td>
-                <td>85285285</td>
-                <td>US</td>
-            </tr>
-            <tr>
-                <td>Amazon</td>
-                <td>85285285</td>
-                <td>US</td>
-            </tr>
-            <tr>
-                <td>Amazon</td>
-                <td>85285285</td>
-                <td>US</td>
-            </tr>
-            <tr>
-                <td>Amazon</td>
-                <td>85285285</td>
-                <td>US</td>
-            </tr>
-        </table>
+      <button id="evenbtn">Color Even Row</button>
+      <button id="oddbtn">Color Odd Row</button>
+      <table>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Amazon</td>
+          <td>85285285</td>
+          <td>US</td>
+        </tr>
+        <tr>
+          <td>Amazon</td>
+          <td>85285285</td>
+          <td>US</td>
+        </tr>
+        <tr>
+          <td>Amazon</td>
+          <td>85285285</td>
+          <td>US</td>
+        </tr>
+        <tr>
+          <td>Amazon</td>
+          <td>85285285</td>
+          <td>US</td>
+        </tr>
+      </table>
+    </div>
+    <div id="studentinfo">
+        <div class="fields">
+            <input type="text" placeholder=" Enter class" id="cls" />
+            <input type="text" placeholder=" Enter board" id="board" />
+            <input type="text" placeholder=" Enter marks" id="marks" />
+            <input type="text" placeholder=" Enter division" id="division" />
+            <button id="addbtn">+</button>
+            <button id="subbtn">-</button>
+        </div>
+      
     </div>
   </body>
   <script>
@@ -77,42 +88,51 @@
         var fname = $("#fname").val();
         var lname = $("#lname").val();
 
-        if(fname == ""){
-            $("#fname").css("background-color", "Red")
-            alert("first name is not given")
-        }else if (lname == ""){
-            $("#fname").css("background-color", "#fff")
-            $("#lname").css("background-color", "red")
-            alert("last name is not given")
-        }else if (pas == ""){
-            $("#lname").css("background-color", "#fff")
-            $("#password").css("background-color", "red")
-            alert("password is not given")
-        }else if (value == ""){
-            $("#password").css("background-color", "#fff")
-            $("#conpassword").css("background-color", "red")
-            alert("confirm password is not given")
+        if (fname == "") {
+          $("#fname").css("background-color", "Red");
+          alert("first name is not given");
+        } else if (lname == "") {
+          $("#fname").css("background-color", "#fff");
+          $("#lname").css("background-color", "red");
+          alert("last name is not given");
+        } else if (pas == "") {
+          $("#lname").css("background-color", "#fff");
+          $("#password").css("background-color", "red");
+          alert("password is not given");
+        } else if (value == "") {
+          $("#password").css("background-color", "#fff");
+          $("#conpassword").css("background-color", "red");
+          alert("confirm password is not given");
+        } else {
+          $("#fname").css("background-color", "#fff");
+          $("#lname").css("background-color", "#fff");
+          $("#password").css("background-color", "#fff");
+          $("#conpassword").css("background-color", "#fff");
+          if (pas != value) {
+            $("#msg").append("Password didn't match");
+          } else {
+            $("#msg").empty();
+          }
         }
-        else{
-             $("#fname").css("background-color", "#fff")
-            $("#lname").css("background-color", "#fff")
-            $("#password").css("background-color", "#fff")
-            $("#conpassword").css("background-color", "#fff")
-            if (pas != value){
-                $("#msg").append("Password didn't match");
-            }
-            else{
-                $("#msg").empty();
-            }
-        }
-     
       });
 
-      $("#evenbtn").click(()=>{
-          $("tr:even").css("background-color", "lightgray")
-      })
-      $("#oddbtn").click(()=>{
-          $("tr:odd").css("background-color", "DodgerBlue")
+      $("#evenbtn").click(() => {
+        $("tr:even").css("background-color", "lightgray");
+      });
+      $("#oddbtn").click(() => {
+        $("tr:odd").css("background-color", "DodgerBlue");
+      });
+      $("#addbtn").click(() => {
+        var field = `<div class="fields"><input type="text" placeholder=" Enter class" class="cls" />
+      <input type="text" placeholder=" Enter board" class="board" />
+      <input type="text" placeholder=" Enter marks" class="marks" />
+      <input type="text" placeholder=" Enter division" class="division" /></div>`;
+       $("#studentinfo").append(field);
+      });
+      $("#subbtn").click(() => {
+          var x = $("#studentinfo").children();
+          if(x)
+
       });
     });
   </script>
