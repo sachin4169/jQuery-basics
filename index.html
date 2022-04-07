@@ -79,61 +79,38 @@
       </div>
       <div id="newinfo"></div>
     </div>
-
+    <div class="test">
+      <p>Car Details</p>
+      <p>
+        In real life, a car is an object. A car has properties like weight and
+        color, and methods like start and stop. All cars have the same
+        properties, but the property values differ from car to car.
+      </p>
+      <p>
+        All cars have the same methods, but the methods are performed at
+        different times.
+      </p>
+    </div>
+    <div class="demo">
+      <p>Food Details</p>
+      <p>The seven food categories are</p>
+      <p>
+        Vegetables, Fruits, Grains, legumes, nuts and seeds, Meat and poultry,
+        Fish and seafood, Dairy foods, Eggs
+      </p>
+      <p>
+        Food sources from animals, birds, seafood and some plants provide
+        protein that is the building blocks of cells
+      </p>
+    </div>
+    <div class="test">
+      <p>Mobile Details</p>
+      <p>
+        There are three categories of mobile phones: basic phones, feature
+        phones, and smartphones.
+      </p>
+      <p>Smartphones are equipped with a QWERTY keypad.</p>
+    </div>
   </body>
-  <script>
-    $(document).ready(function () {
-      $("#btn").click(() => {
-        var pas = $("#password").val();
-        var value = $("#conpassword").val();
-        var fname = $("#fname").val();
-        var lname = $("#lname").val();
-
-        if (fname == "") {
-          $("#fname").css("background-color", "Red");
-          alert("first name is not given");
-        } else if (lname == "") {
-          $("#fname").css("background-color", "#fff");
-          $("#lname").css("background-color", "red");
-          alert("last name is not given");
-        } else if (pas == "") {
-          $("#lname").css("background-color", "#fff");
-          $("#password").css("background-color", "red");
-          alert("password is not given");
-        } else if (value == "") {
-          $("#password").css("background-color", "#fff");
-          $("#conpassword").css("background-color", "red");
-          alert("confirm password is not given");
-        } else {
-          $("#fname").css("background-color", "#fff");
-          $("#lname").css("background-color", "#fff");
-          $("#password").css("background-color", "#fff");
-          $("#conpassword").css("background-color", "#fff");
-          if (pas != value) {
-            $("#msg").append("Password didn't match");
-          } else {
-            $("#msg").empty();
-          }
-        }
-      });
-
-      $("#evenbtn").click(() => {
-        $("tr:even").css("background-color", "lightgray");
-      });
-      $("#oddbtn").click(() => {
-        $("tr:odd").css("background-color", "DodgerBlue");
-      });
-      $("#addbtn").click(() => {
-        var field = `<div class="fields"><input type="text" placeholder=" Enter class" class="cls" />
-      <input type="text" placeholder=" Enter board" class="board" />
-      <input type="text" placeholder=" Enter marks" class="marks" />
-      <input type="text" placeholder=" Enter division" class="division" /></div>`;
-        $("#newinfo").append(field);
-      });
-      $("#subbtn").click(() => {
-        var x = $("#newinfo").children();
-        x.last().remove();
-      });
-    });
-  </script>
+  <script src="app.js"></script>
 </html>
