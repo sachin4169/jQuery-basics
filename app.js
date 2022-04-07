@@ -55,5 +55,20 @@ $(document).ready(function () {
        $(".test").children().first().css({"color":"red"});
        $(".test").children().last().css({"color":"red"});
      },5000);
-   
+
+     var img = ["img1","img2","img3","img4","img5"];
+     var i=0;
+     $("#next").click(()=>{
+         if(i != 4)
+            i++;
+        $('#img').attr("src","img/"+img[i]+".jpg");
+        
+     });
+     $("#pre").click(()=>{
+       if(i != 0)
+           i--;
+        $('#img').attr("src","img/"+img[i]+".jpg");
+        
+     });
+     
   });
