@@ -69,16 +69,17 @@
       </table>
     </div>
     <div id="studentinfo">
-        <div class="fields">
-            <input type="text" placeholder=" Enter class" id="cls" />
-            <input type="text" placeholder=" Enter board" id="board" />
-            <input type="text" placeholder=" Enter marks" id="marks" />
-            <input type="text" placeholder=" Enter division" id="division" />
-            <button id="addbtn">+</button>
-            <button id="subbtn">-</button>
-        </div>
-      
+      <div class="fields">
+        <input type="text" placeholder=" Enter class" id="cls" />
+        <input type="text" placeholder=" Enter board" id="board" />
+        <input type="text" placeholder=" Enter marks" id="marks" />
+        <input type="text" placeholder=" Enter division" id="division" />
+        <button id="addbtn">+</button>
+        <button id="subbtn">-</button>
+      </div>
+      <div id="newinfo"></div>
     </div>
+
   </body>
   <script>
     $(document).ready(function () {
@@ -127,12 +128,11 @@
       <input type="text" placeholder=" Enter board" class="board" />
       <input type="text" placeholder=" Enter marks" class="marks" />
       <input type="text" placeholder=" Enter division" class="division" /></div>`;
-       $("#studentinfo").append(field);
+        $("#newinfo").append(field);
       });
       $("#subbtn").click(() => {
-          var x = $("#studentinfo").children();
-          if(x)
-
+        var x = $("#newinfo").children();
+        x.last().remove();
       });
     });
   </script>
