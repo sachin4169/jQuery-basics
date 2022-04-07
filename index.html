@@ -25,6 +25,10 @@
     </style>
   </head>
   <body>
+    <h4>First Name</h4>
+    <input type="text" name="fname" id="fname" />
+    <h4>Last Name</h4>
+    <input type="text" name="lname" id="lname" />
     <h4>New Password</h4>
     <input type="password" name="password" id="password" />
     <h4>Confirm Password</h4>
@@ -70,12 +74,38 @@
       $("#btn").click(() => {
         var pas = $("#password").val();
         var value = $("#conpassword").val();
-        if (pas != value){
-            $("#msg").append("Password didn't match");
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
+
+        if(fname == ""){
+            $("#fname").css("background-color", "Red")
+            alert("first name is not given")
+        }else if (lname == ""){
+            $("#fname").css("background-color", "#fff")
+            $("#lname").css("background-color", "red")
+            alert("last name is not given")
+        }else if (pas == ""){
+            $("#lname").css("background-color", "#fff")
+            $("#password").css("background-color", "red")
+            alert("password is not given")
+        }else if (value == ""){
+            $("#password").css("background-color", "#fff")
+            $("#conpassword").css("background-color", "red")
+            alert("confirm password is not given")
         }
         else{
-            $("#msg").empty();
+             $("#fname").css("background-color", "#fff")
+            $("#lname").css("background-color", "#fff")
+            $("#password").css("background-color", "#fff")
+            $("#conpassword").css("background-color", "#fff")
+            if (pas != value){
+                $("#msg").append("Password didn't match");
+            }
+            else{
+                $("#msg").empty();
+            }
         }
+     
       });
 
       $("#evenbtn").click(()=>{
