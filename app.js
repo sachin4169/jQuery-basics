@@ -70,15 +70,23 @@ $(document).ready(function () {
         $('#img').attr("src","img/"+img[i]+".jpg");
         
      });
-    //  var x =  ["lily","Rose", "RRR"];
+     var x =  ["Rose","Lily","Tulip","Orchid","Carnation","Hyacinth", "Peruvian Lily","Chrysanthemum",
+    "Gladiolus","Anemone","Daffodil","Sunflower"
+    ];
     
-    // $('#inp').on("change paste keyup", function() { 
-    //    var val = $(this).val();  // get the current value of the input field.
-    //    var p = "";
-    //    x.forEach(element => {
-    //        console.log(element);
-    //    });
-    // });
+    $('#inp').on("change paste keyup", function() { 
+       var value = $(this).val().toLowerCase();  // get the current value of the input field.
+      $("#sug").empty()
+      $("#sug").append("suggestions:")
+       x.forEach(element => {
+          if (element.toLowerCase().search(value) > -1) {
+            $("#sug").append(element+",")
+            console.log(element+",");
+        } else {
+            console.log("not found");
+        }
+       });
+    });
     $("#clickpara").click(()=>{
       alert("you have clicked on paragraph");
       $("body").append("you have clicked on paragraph");
