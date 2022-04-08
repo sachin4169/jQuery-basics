@@ -119,4 +119,24 @@ $(document).ready(function () {
       </li>
     </ul>`)
     });
+
+    $("#dg").change(()=>{
+      var val = $("#dg").val(); 
+      $("#price").empty();
+      if(val=="m"){
+        $("#price").append("2000");
+      }else {
+        $("#price").append("1000");
+      }
+    });
+
+    $("#ts").change(()=>{
+      var val = $("#ts").val(); 
+      $("#tsprice").empty();
+      if(val=="lg"){
+        $("#tsprice").append("2500");
+      }else {
+        $("#tsprice").append("1200");
+      }
+    });
   });
