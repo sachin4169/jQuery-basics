@@ -70,5 +70,20 @@ $(document).ready(function () {
         $('#img').attr("src","img/"+img[i]+".jpg");
         
      });
+    //  var x =  ["lily","Rose", "RRR"];
+    
+    // $('#inp').on("change paste keyup", function() { 
+    //    var val = $(this).val();  // get the current value of the input field.
+    //    var p = "";
+    //    x.forEach(element => {
+    //        console.log(element);
+    //    });
+    // });
+    $("#clickpara").click(()=>{
+      alert("you have clicked on paragraph");
+      $("body").append("you have clicked on paragraph");
+      // $(document.createElement("p").innerHTML="you have clicked on paragraph");
+      // p.innerHTML = "you have clicked on paragraph";
+    });
      
   });
