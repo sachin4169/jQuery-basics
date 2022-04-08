@@ -23,8 +23,8 @@
         padding: 10px;
         width: 20px;
       }
-      #img{
-          width: 40%;
+      #img {
+        width: 40%;
       }
     </style>
   </head>
@@ -106,7 +106,7 @@
         protein that is the building blocks of cells
       </p>
     </div>
- 
+
     <div class="test">
       <p>Mobile Details</p>
       <p>
@@ -117,17 +117,37 @@
     </div>
 
     <div class="imgbox">
-        <button id="pre">Previous</button>
-        <button id="next">Next</button>
-        <div>
-            <img id="img" src="img/img1.jpg" alt="img">
-        </div>
+      <button id="pre">Previous</button>
+      <button id="next">Next</button>
+      <div>
+        <img id="img" src="img/img1.jpg" alt="img" />
+      </div>
     </div>
 
-    <input type="text" id="inp">
+    <input type="text" id="inp" />
     <p id="sug"></p>
 
     <p id="clickpara">click me paragrapha</p>
+
+    <div>
+      <h2>Product List</h2>
+      <ul id="main_ul">
+        <li><a href="">Cloths</a><button id="cloth-ul">+</button></li>
+        <li>
+          <ul id="li-add-clo">
+            <li><a href="">T-shirt</a><button class="cloth-li">+</button> </li>
+            <li><a href="">Trouser</a><button class="cloth-li">+</button> </li>
+          </ul>
+        </li>
+        <li><a href="">Electronics</a><button id="ele-ul">+</button></li>
+        <li>
+          <ul id="li-add-ele">
+            <li><a href="">Mobiles</a><button class="ele-li">+</button></li>
+            <li><a href="">Tabs</a><button class="ele-li">+</button></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </body>
   <script src="app.js"></script>
 </html>

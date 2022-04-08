@@ -85,5 +85,30 @@ $(document).ready(function () {
       // $(document.createElement("p").innerHTML="you have clicked on paragraph");
       // p.innerHTML = "you have clicked on paragraph";
     });
-     
+     $(".cloth-li").click(()=>{
+       $("#li-add-clo").append(`<li><a href="">Trouser</a><button class="cloth-li">+</button> </li>`)
+     });
+     $(".ele-li").click(()=>{
+      $("#li-add-ele").append(`<li><a href="">Tabs</a><button class="ele-ul">+</button></li>`)
+    });
+
+    $("#cloth-ul").click(()=>{
+      $("#main_ul").append(` <li><a href="">Cloths</a><button id="cloth-ul">+</button></li>
+      <li>
+        <ul id="li-add-clo">
+          <li><a href="">T-shirt</a><button class="cloth-li">+</button> </li>
+          <li><a href="">Trouser</a><button class="cloth-li">+</button> </li>
+        </ul>
+      </li>`)
+    });
+    $("#ele-ul").click(()=>{
+      $("#main_ul").append(`  <li><a href="">Electronics</a><button id="ele-ul">+</button></li>
+      <li>
+        <ul id="li-add-ele">
+          <li><a href="">Mobiles</a><button class="ele-li">+</button></li>
+          <li><a href="">Tabs</a><button class="ele-li">+</button></li>
+        </ul>
+      </li>
+    </ul>`)
+    });
   });
